@@ -67,12 +67,18 @@ body {
     margin-top: 0px;
     margin-left: 50px;
 }
-.img{
-    margin-top: 20px;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    border: 1px solid #e5e7eb;
+.img {
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  object-fit: cover; /* ✅ ensures image content fits without distortion */
+}
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* ✅ Important for perfect circle without stretching */
 }
 .intro{
     padding: 40px;
@@ -164,28 +170,59 @@ h3 , h1 ,p , h2{
 
 
 
-/* Tablet (≤ 992px) */
+
+
 @media (max-width: 992px) {
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    height: auto;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .nav-start a,
+  .nav-end a {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
   .hero {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    margin: 30px auto;
+    height: auto;
   }
 
   .about {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-left: 0;
     padding: 20px;
   }
 
   .img {
-    height: 140px;
-    width: 140px;
+    margin: 0 auto 15px auto;
+    height: 150px;
+    width: 150px;
   }
 
   .intro {
-    margin-left: 0;
-    padding: 20px 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .aboutme {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
   }
 
   .skill-section,
@@ -199,82 +236,12 @@ h3 , h1 ,p , h2{
   .education,
   .contact2 {
     width: 90%;
-    margin: 15px 0;
-  }
-}
-
-/* Mobile (≤ 768px) */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-  }
-
-  .nav-start a,
-  .nav-end a {
-    margin: 10px;
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .name {
-    font-size: 36px;
-  }
-
-  .hero {
-    width: 95%;
-    padding: 10px;
-    height: auto;
-  }
-
-  .aboutme {
-    width: 95%;
-    margin-left: 0;
-    padding: 10px;
+    margin: 20px auto;
   }
 
   .footer {
     font-size: 14px;
     padding: 10px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-    align-items: center;
-  }
-
-  .nav-start,
-  .nav-end {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .nav-start a,
-  .nav-end a {
-    margin: 10px 0;
-    width: 90%;
-    text-align: center;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .nav-start a,
-  .nav-end a {
-    margin: 8px;         /* ✅ kam margin */
-    padding: 8px 10px;   /* ✅ thoda chhota padding */
-    font-size: 14px;     /* ✅ chhota font size */
-  }
-
-  .navbar {
-    padding: 0 20px;     /* ✅ less padding overall */
+    margin-top: 40px;
   }
 }
